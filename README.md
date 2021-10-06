@@ -9,11 +9,13 @@ a.	Network Design:
  Of course, a single hidden layer was used. I settled with a size of 12 nodes. I came to this number by using PCA to find number of features that would give me a variance >= 99%. The activation function used is ReLU. I could have used sigmoid since it is a shallow network, but performance was similar while I was developing the model. Below is the output of the model from the terminal.
 
 NeuralNetwork(
-  (hiddenLayers): Linear(in_features=13, out_features=12, bias=True)
+  
   (layers): Sequential(
+  
     (0): Linear(in_features=13, out_features=12, bias=True)
     (1): ReLU()
     (2): Linear(in_features=12, out_features=3, bias=True)
+    
   )
 )
 
@@ -30,20 +32,22 @@ c.	Results:
 
 Metrics
 Epochs	227
-Training Loss	0.14
-Validation Loss	0.30
-Validation Accuracy	0.86
-Test Accuracy 	0.97
+Training Loss	= 0.14
+Validation Loss	= 0.30
+Validation Accuracy	= 0.86
+Test Accuracy =	0.97
 
 Validation Confusion Matrix
-2	2	0
-0	4	0
-0	0	6
+
+    2	2	0
+    0	4	0
+    0	0	6
 
 Test Confusion Matrix
-13	1	0
-0	14	0
-0	0	7
+    
+    13	1	0
+    0	14	0
+    0	0	7
 
 
 B.	Effect of Performance on a Variety of Parameters
@@ -51,17 +55,19 @@ B.	Effect of Performance on a Variety of Parameters
 The goal was to see how different hyper parameters affected the performance of the neural networks. Below there are 4 tables that demonstrate this. The first table shows the categories (network design, learning rate, and stopping criteria). The second, third, and fourth table shows how the average value of the metrics when the parameter value was set (green). The best performing parameter is also show (yellow). 
 
 Experimentation Parameters
-Hidden Layers & Nodes	12	12, 6	12, 8, 4
-Learning Rate	0.0001	0.001	0.01
-Stopping Criteria	Training Loss	Validation Loss	Validation Accuracy
+
+    Hidden Layers & Nodes:	   [12]	            [12, 6]	          [12, 8, 4]
+    Learning Rate:	          0.0001	            0.001	              0.01
+    Stopping Criteria:	  'Training Loss'	'Validation Loss'	'Validation Accuracy'
 
 Effect of Hidden Layers
-Hidden Layers & Nodes	12	12, 6	12, 8, 4
-Average # of Epochs	183.44	187.67	185.56
-Average Training Loss	0.59	0.32	0.23
-Average Validation Loss	0.53	0.32	0.33
-Average Validation Accuracy	0.88	0.86	0.86
-Average Test Accuracy	0.9	0.84	0.85
+
+    Hidden Layers & Nodes:	      [12]	[12 6]	[12 8 4]
+    Average # of Epochs:	       183.44	187.67	185.56
+    Average Training Loss:	       0.59	0.32	0.23
+    Average Validation Loss:	     0.53	0.32	0.33
+    Average Validation Accuracy:	 0.88	0.86	0.86
+    Average Test Accuracy:	       0.9	0.84	0.85
 
 
 Effect of Learning Rate
